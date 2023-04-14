@@ -1,0 +1,31 @@
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    leaseRenewalIntervalInSeconds: 5   
+    preferIpAddress: true
+  client:  
+    serviceUrl:
+     defaultZone: http://localhost:8761/eureka/
+logging:
+  level:
+    com:
+      sfwchallenge:
+        java: debug
+spring:
+  config:
+    import: optional:configserver:http://localhost:9085
+  data:
+    mongodb:
+      auto-index-creation: true
+      uri: mongodb://localhost:27017
+      database: swfchallenge2023
+  cloud:
+    azure:
+      storage:
+        queue:       
+          account-name: santtdata
+          account-key: Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==
+          endpoint: http://127.0.0.1:10001/devstoreaccount1/swf-2023-notification
+          queue-name: swf-2023-notification
+          connection: AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;DefaultEndpointsProtocol=http;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1;
+

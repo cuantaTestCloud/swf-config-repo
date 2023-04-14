@@ -1,0 +1,49 @@
+logging:
+  level:
+    com:
+      sfw:
+        challenge: debug
+mail:
+  smtp:
+    auth: true
+    from: sfw.developer.notification@gmail.com
+    host: smtp.gmail.com
+    password: szaywvkduudwlepi
+    port: 465
+    socketFactory:
+      class: javax.net.ssl.SSLSocketFactory
+      port: 465
+    username: sfw.developer.notification@gmail.com
+spring:
+  config:
+    import: optional:configserver:http://swf-2023-config-server-service:8085
+  data:
+    mongodb:
+      auto-index-creation: true
+      uri:  mongodb+srv://admin:6XiaixctVrOnhYE0@cluster0.ksdvwam.mongodb.net/?retryWrites=true&w=majority
+      database: swfchallenge2023
+  cloud:
+    azure:
+      storage:
+        queue:
+          account-name: santtdata
+          account-key: cm52yUWmKS6zBBDWDCbV8I/hS8V6w5/z19zkvjF26Z623yH+ev6wsYcIdzJOnRNxkeimjO9vxeAw+ASt6qTiHA==
+          endpoint: https://santtdata.queue.core.windows.net/quenttdata
+          queue-name: quenttdata
+          connection: DefaultEndpointsProtocol=https;AccountName=santtdata;AccountKey=cm52yUWmKS6zBBDWDCbV8I/hS8V6w5/z19zkvjF26Z623yH+ev6wsYcIdzJOnRNxkeimjO9vxeAw+ASt6qTiHA==;EndpointSuffix=core.windows.net
+          maxMessages: 30
+templates:
+  default:
+    uri: classpath:/templates/default/index.html
+  template01:
+    uri: classpath:/templates/template01/index.html
+  template02:
+    uri: classpath:/templates/template02/index.html
+  template03:
+    uri: classpath:/templates/template03/index.html
+  template04:
+    uri: classpath:/templates/template04/index.html
+  template05:
+    uri: classpath:/templates/template05/index.html
+  template06:
+    uri: classpath:/templates/template06/index.html

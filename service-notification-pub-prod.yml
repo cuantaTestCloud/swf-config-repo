@@ -1,0 +1,26 @@
+logging:
+  level:
+    com:
+      sfwchallenge:
+        java: info
+
+server:
+  port: 8088
+  
+spring:
+  config:
+    import: optional:configserver:http://swf-2023-config-server-service:8085
+  data:
+    mongodb:
+      auto-index-creation: true
+      uri: mongodb+srv://admin:6XiaixctVrOnhYE0@cluster0.ksdvwam.mongodb.net/?retryWrites=true&w=majority     
+      database: swfchallenge2024
+  cloud:
+    azure:
+      storage:
+        queue:       
+          account-name: santtdata
+          account-key: cm52yUWmKS6zBBDWDCbV8I/hS8V6w5/z19zkvjF26Z623yH+ev6wsYcIdzJOnRNxkeimjO9vxeAw+ASt6qTiHA==
+          endpoint: https://santtdata.queue.core.windows.net/quenttdata
+          queue-name: quenttdata
+          connection: DefaultEndpointsProtocol=https;AccountName=santtdata;AccountKey=cm52yUWmKS6zBBDWDCbV8I/hS8V6w5/z19zkvjF26Z623yH+ev6wsYcIdzJOnRNxkeimjO9vxeAw+ASt6qTiHA==;EndpointSuffix=core.windows.net
